@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         lvMonth = findViewById(R.id.lvMonth);
         months = new DateFormatSymbols().getMonths();
-        ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, months);
+        //ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, months);
+        ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(this, R.layout.list_item, months);
+
         lvMonth.setAdapter(monthAdapter);
         lvMonth.setOnItemClickListener(this);
 
