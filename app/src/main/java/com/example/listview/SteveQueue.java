@@ -16,7 +16,7 @@ public class SteveQueue {
     }
 
     //brain methods
-    public void addToBack(int info)
+    public void addToBack(String info)
     {
 
         //head.setsLinkPrev(head);
@@ -61,6 +61,28 @@ public class SteveQueue {
         count--;
     }
 
+    public String[] toArray()
+    {
+        String[] QArray = new String[count];
+
+
+
+            SteveNode position  = tail.getsLink();
+            //System.out.println(head.getsData());
+            //System.out.println(tail.getsLink().getsData());
+            for(int i = 0; i < count; i++)
+            {
+//            System.out.println(position.getsData());
+//            System.out.println("-");
+                QArray[i] = position.getsData();
+                position = position.getsLink();
+            }
+
+
+
+        return QArray;
+    }
+
     public String printOut()
     {
         String ans = "";
@@ -93,12 +115,12 @@ public class SteveQueue {
 
     private class SteveNode{
         //instance variables
-        private int sData;
+        private String sData;
         private SteveNode sLink;
         //private SteveNode sLinkPrev;
 
         //Constructors
-        public SteveNode(int sData, SteveNode sLink)
+        public SteveNode(String sData, SteveNode sLink)
         {
             this.sData = sData;
             this.sLink = sLink;
@@ -110,7 +132,7 @@ public class SteveQueue {
         }
 
         //getters and setters
-        public int getsData() {
+        public String getsData() {
             return sData;
         }
 
